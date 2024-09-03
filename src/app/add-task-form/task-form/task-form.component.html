@@ -1,0 +1,28 @@
+<section>
+  <h1>Formulaire d'ajout de tâche</h1>
+
+  <form [formGroup]="addTaskForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="title">Titre</label>
+      <input id="title" type="text" formControlName="title">
+      <div *ngIf="addTaskForm.get('title')?.touched && addTaskForm.get('title')?.invalid">
+        <p *ngIf="addTaskForm.get('title')?.errors?.['required']">Le titre est requis.</p>
+        <p *ngIf="addTaskForm.get('title')?.errors?.['minlength']">Le titre doit comporter au moins 3 caractères.</p>
+        <p *ngIf="addTaskForm.get('title')?.errors?.['maxlength']">Le titre ne doit pas dépasser 50 caractères.</p>
+      </div>
+    </div>
+
+    <div>
+      <label for="description">Description</label>
+      <input id="description" type="text" formControlName="description">
+      <div *ngIf="addTaskForm.get('description')?.touched && addTaskForm.get('description')?.invalid">
+        <p *ngIf="addTaskForm.get('description')?.errors?.['minlength']">La description doit comporter au moins 3 caractères.</p>
+        <p *ngIf="addTaskForm.get('description')?.errors?.['maxlength']">La description ne doit pas dépasser 200 caractères.</p>
+      </div>
+    </div>
+
+    <div>
+      <button type="submit" [disabled]="!addTaskForm.valid">Valider</button>
+    </div>
+  </form>
+</section>

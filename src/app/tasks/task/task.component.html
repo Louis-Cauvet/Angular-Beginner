@@ -1,0 +1,7 @@
+<div [colorTask]="currentTaskComponent.state" class="task-item">
+  <h2>{{ currentTaskComponent.title }}</h2>
+  <p>{{ currentTaskComponent.description }}</p>
+  <p>{{ currentTaskComponent.state }}</p>
+  <p>Date de création : {{currentTaskComponent.creationDate | FormatdatePipe }}</p>
+</div>
+

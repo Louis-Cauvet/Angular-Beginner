@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:task-manager": "node dist/task-manager/server/server.mjs"
+    "serve:ssr:task-manager": "node dist/task-manager/server/server.mjs",
+    "compodoc": "npx compodoc -p tsconfig.doc.json -s --port 4205 -w"
   },
   "private": true,
   "dependencies": {

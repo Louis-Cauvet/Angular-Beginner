@@ -1,0 +1,5 @@
+<h1>Ma liste de tâches </h1>
+
+@for (task of currentTaskListComponent; track $index) {
+  <app-task [currentTaskComponent]="task"></app-task>
+}
